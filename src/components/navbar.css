@@ -1,0 +1,234 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Hamburger styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  z-index: 1500;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background: black;
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+.rotate1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.rotate2 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.hide {
+  opacity: 0;
+}
+
+/* Menu styles */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  transition: right 0.3s ease;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #888;
+}
+
+/* --- Responsive Styles --- */
+
+/* Small screens: up to 420px */
+@media (max-width: 420px) {
+  .navbar {
+    padding: 10px 15px;
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    display: flex;
+    right: 15px;
+    top: 15px;
+    width: 24px;
+    height: 18px;
+  }
+
+  .menu {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 180px;
+    height: calc(100vh - 60px);
+    flex-direction: column;
+    background: white;
+    padding: 15px;
+    z-index: 999;
+    transition: right 0.3s ease;
+    gap: 15px;
+  }
+
+  .menu.open {
+    right: 0;
+  }
+
+  .menu li {
+    margin-bottom: 15px;
+  }
+
+  .menu li a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium screens: up to 768px */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 200px;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    z-index: 999;
+    transition: right 0.3s ease;
+  }
+
+  .menu.open {
+    right: 0;
+  }
+
+  .menu li {
+    margin-bottom: 20px;
+  }
+}
+
+/* Large screens: 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 15px 40px;
+    justify-content: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    gap: 25px;
+  }
+
+  .menu.open {
+    right: auto;
+  }
+
+  .menu li {
+    margin-bottom: 0;
+  }
+
+  .menu li a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra large screens: 1025px to 1320px */
+@media (min-width: 1025px) and (max-width: 1320px) {
+  .navbar {
+    padding: 20px 60px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    gap: 35px;
+  }
+
+  .menu li a {
+    font-size: 1.15rem;
+  }
+}
+
+/* Ultra wide screens: above 1320px */
+@media (min-width: 1321px) {
+  .navbar {
+    padding: 20px 100px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    gap: 40px;
+  }
+
+  .menu li a {
+    font-size: 1.2rem;
+  }
+}
